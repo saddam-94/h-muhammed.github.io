@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-lg-2 col-md-4 offset-md-2 offset-lg-3 text-center mt-4">
+    <img src="{{ url_for('static', filename="img/profile.jpg") }}" class="rounded img-fluid" style="max-width: 150px;" />
+  </div>
+  <div class="col-md-6 pt-2 pl-4 mt-4">
+    <ul class="list-unstyled m-0">
+      <li><i class="fas fa-briefcase"></i> Sr. Machine Learning Engineer, Brain Craft Ltd., Mohakhali DOHS, Dhaka.</li>
+      <li><i class="fas fa-briefcase"></i> Ex Machine Learning Engineer, Chowagiken Corporation, Tokyo, Japan.</li>
+      <li><a href="mailto:www.kentaro.wada (at) gmail.com"><i class="fas fa-envelope"></i> mshossaincse (at) gmail.com</a></li>
+      <li><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</li>
+      <li>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="https://scholar.google.com/citations?user=HObrWFsAAAAJ&hl=en" class="unstyled"><i class="ai ai-google-scholar-square fa-2x"></i></a></li>
+          <li class="list-inline-item"><a href="https://github.com/h-muhammed" class="unstyled"><i class="fab fa-github fa-2x"></i></a></li>
+          <li class="list-inline-item"><a href="https://twitter.com/10GlorifyMe" class="unstyled"><i class="fab fa-twitter fa-2x"></i></a></li>
+          <li class="list-inline-item p0"><a href="https://www.linkedin.com/in/hossain-muhammad/" class="unstyled"><i class="fab fa-linkedin fa-2x"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.facebook.com/mshossaincse" class="unstyled"><i class="fab fa-facebook fa-2x"></i></a></li>
+          <!-- <li class="list-inline-item"><a href="https://www.instagram.com/wkentaro_" class="unstyled"><i class="fab fa-instagram fa-2x"></i></a></li> -->
+          <li class="list-inline-item p0"><a href="https://www.youtube.com/@mdsaddamhossain9386" class="unstyled"><i class="fab fa-youtube fa-2x"></i></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-lg-8 offset-lg-2">
+    <p>
+      Hossain Muhammad Saddam was born in Cumilla, Bangladesh in 1994. He received his B.Sc. (2018) from Computer Science and Engineering Department in The Shahjalal University of Science and Technology, Sylhet (SUST).
+      In his time-span at SUST, he was learned programming language(C/C++, Java, Python), Data Structure, Algoirthm, Linear, Algebra, Calculas, Statistics, Probabiliy, OS, AI, and ML etc.
+      He accomplished his final year thesis in 2017 at SUST supervised by <a href="https://www.sust.edu/d/cse/faculty-profile-detail/50/">Asst. Prof. Sabir Ismail</a> and <a href="https://www.sust.edu/d/cse/faculty-profile-detail/55/">Asst. Prof. Md Saiful Islam</a>. 
+      In his final year thesis, he worked on Natural Language Processing in Bengali word clustering using n-gram language model with probability distribution,
+      and showed state of the art performance in this research area. Then he joined Chowagiken Corporation, Tokyo, Japan in 2019 as a machine learning engineer, and is working on Computer Vision and NLP as well as time series data.</p>
+  </div>
+</div>
+
+<h2>Updates</h2>
+<div class="card card-body">
+  <ul class="m-0 pl-3">
+    {% include "include/updates.html" %}
+  </ul>
+</div>
+{% if updated_at is not none %}
+<p class="text-right m-0">Last Update: {{ updated_at.strftime('%Y-%m-%d') }}</p>
+{% endif %}
+
+<hr/>
+<h2 id="research">Selected Projects</h2>
+{% include "include/papers.html" %}
+
+{% endblock %}
