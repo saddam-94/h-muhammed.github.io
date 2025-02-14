@@ -14,8 +14,8 @@ def main():
 
     freezer.freeze()
 
-    with open("wkentaro_com/build/CNAME", "w") as f:
-        f.write("www.wkentaro.com\n")
+    with open("mshossain_com/build/CNAME", "w") as f:
+        f.write("www.mshossain.ai\n")
 
 
 if __name__ == "__main__":
